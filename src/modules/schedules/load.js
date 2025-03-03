@@ -4,6 +4,7 @@ const selectedDate = document.getElementById("date")
 
 export function schedulesDay(){
     
+    const date = selectedDate.value
 
-    hoursLoad({sele})
+    hoursLoad({date})
 }

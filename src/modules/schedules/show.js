@@ -31,10 +31,18 @@ export function scheduleShow({dailySchedules}){
 
             item.append(time, name, cancelIcon)
 
-            // const hour = dayjs(schedule.)
+            const hour = dayjs(schedule.when).hour()
+
+            if (hour <= 12) {
+                periodMorning.appendChild(item)
+            } else if (hour > 12 && hour <= 18) {
+                periodAfternoon.appendChild(item)
+            } else {
+                periodNight.appendChild(item)
+            }
         });
     } catch (error) {
         console.log(error);
-        alert("Não foi possivel realizar os agendamentos.")
+        alert("Não foi possível realizar os agendamentos.")
     }
 }
